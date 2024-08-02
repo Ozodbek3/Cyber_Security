@@ -1,3 +1,5 @@
+import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
 import styled from "styled-components";
 
 const Container = styled("div")`
@@ -15,7 +17,9 @@ const ChildrenComponent = styled("div")`
 const BaseLayout = ({ children, theme, toggleTheme }) => {
   return (
     <Container>
+      <Navbar></Navbar>
       <ChildrenComponent>{children}</ChildrenComponent>
+      <Footer></Footer>
     </Container>
   );
 };
