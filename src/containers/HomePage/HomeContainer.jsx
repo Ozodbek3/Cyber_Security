@@ -13,7 +13,9 @@ const Container = styled("div")`
 const HomeContainer = ({ theme }) => {
   const navigate = useNavigate();
 
-  return <Container></Container>;
+  return <Container>
+
+  </Container>;
 };
 
 export default HomeContainer;
