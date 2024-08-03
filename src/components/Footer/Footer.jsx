@@ -14,37 +14,12 @@ import { IoPhonePortraitOutline } from "react-icons/io5";
 
 
 const FooterDiv = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 70%;
-  background-color: ${({ theme }) => theme.footer};
-`;
-const Solutions = styled.div`
-  width: 90%;
-  position: absolute;
-  top: 2rem;
-  left: 5rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-`;
-const SolutionsDiv = styled.div`
-  height: 20rem;
-  width: 18%;
-`;
-const SolutionsP = styled.a`
-  position: relative;
-  top: 1rem;
-  display: block;
-  height: 2rem;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
-  &&:hover {
-    text-decoration: 0.5px white underline;
-  }
-`;
+    position: relative;
+    bottom: 2%;
+    width: 100%;
+    height: 60%;
+    background-color: ${({theme}) => theme.footer};
+`
 const Safetyh3 = styled.h3`
   position: relative;
   top: 25rem;
@@ -65,8 +40,6 @@ const P = styled.p`
 `;
 
 const Footer = () => {
-
-
   return (
     <FooterDiv>
       <Solutions>
