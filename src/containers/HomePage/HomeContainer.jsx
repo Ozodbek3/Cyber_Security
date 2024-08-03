@@ -3,11 +3,26 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Search } from "react-feather";
 import { RxCross2 } from "react-icons/rx";
+import responses from "./components/responses.json";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${({theme}) => theme.primary};
+  background-color: ${({ theme }) => theme.primary};
+`;
+const Invisible = styled("div")`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+`;
+const Closed = styled("div")`
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  left: 200vw;
 `;
 const Section = styled.div`
   display: flex;
@@ -15,14 +30,37 @@ const Section = styled.div`
   align-items: center;
   height: 100vh;
 `;
-
 const Minidiv = styled("div")`
   display: flex;
+  flex-direction: column;
   position: fixed;
   background-color: blue;
-  transition: top 0.3s ease, left 0.3s ease, height 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
+  z-index: 900;
+  transition: top 0.3s ease, left 0.3s ease, height 0.3s ease, width 0.3s ease,
+    border-radius 0.3s ease;
 `;
-
+const Response = styled("div")`
+  width: 90%;
+  height: 70%;
+  margin-left: 5%;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+const Buttons = styled("div")`
+  display: flex;
+  width: 90%;
+  height: 20%;
+  margin-left: 5%;
+  background-color: white;
+`;
+const Button = styled("div")`
+  width: 25%;
+  height: 30%;
+  margin: 0 2%;
+  background-color: red;
+`;
 const Circle = styled("div")`
   position: fixed;
   cursor: pointer;
@@ -44,7 +82,6 @@ const Sec1_photo = styled.video`
   background-color: red;
 `;
 const HomeContainer = ({ theme }) => {
-
   const [open, setOpen] = useState(false);
   const [width, setWidth] = useState("7vh");
   const [height, setHeight] = useState("7vh");
@@ -61,6 +98,12 @@ const HomeContainer = ({ theme }) => {
     }
   };
 
+  const invisible = () => {
+    setOpen(false);
+    setHeight("7vh");
+    setWidth("7vh");
+  };
+
   const calculateTop = () => {
     if (!open) return "85%";
     return `calc(86% - 90vh + 7vh)`;
@@ -73,17 +116,19 @@ const HomeContainer = ({ theme }) => {
 
   return (
     <Container>
-    <Section>
-        <Sec1_photo>
-
-        </Sec1_photo>
+      <Invisible onClick={invisible} />
+      <Section>
+        <Sec1_photo></Sec1_photo>
         <Sec1_text>
-          <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque placeat molestiae laudantium.</h4>
+          <h4>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque
+            placeat molestiae laudantium.
+          </h4>
         </Sec1_text>
       </Section>
 
       <Section>2</Section>
-    
+
       <Section>3</Section>
       <Circle>
         {open === false ? (
@@ -100,7 +145,17 @@ const HomeContainer = ({ theme }) => {
           left: calculateLeft(),
           borderRadius: open ? "2rem" : "50%",
         }}
-      />
+      >
+        {open === false ? <Closed /> : <Response></Response>}
+        {open === false ? (
+          <Closed />
+        ) : (
+          <Buttons>
+            <Button></Button>
+            <Button></Button>
+          </Buttons>
+        )}
+      </Minidiv>
     </Container>
   );
 };
