@@ -15,27 +15,55 @@ import { IoPhonePortraitOutline } from "react-icons/io5";
 
 const FooterDiv = styled.div`
     position: relative;
-    bottom: 2%;
     width: 100%;
     height: 60%;
-    background-color: ${({theme}) => theme.footer};
+    background-color: blue;
 `
 const Safetyh3 = styled.h3`
-  position: relative;
+  position: absolute;
   top: 25rem;
   margin-left: 40rem;
 `;
 const FooterLine = styled.div`
-  position: relative;
+  position: absolute;
   left: 5rem;
   top: 23rem;
   width: 90%;
   height: 1px;
   background-color: white;
 `;
-const P = styled.p`
+const Solutions = styled.div`
+    position: absolute;
+    left: 5rem;
+    top: 1rem;
+    display: flex;
+    justify-content:space-between;
+    height: 20rem;
+    width: 90%;
+
+`
+const SolutionsDiv = styled.div`
+    position: relative;
+    left: 3rem;
+    width: 20%;
+`
+const SolutionsA = styled.a`
   position: relative;
-  top: 27rem;
+  top: 1rem;
+  display: block;
+  height: 2rem;
+  align-items: center;
+  cursor: pointer;
+  color: black;
+  &&:hover {
+    text-decoration: 0.5px white underline;
+  }
+  
+`;
+
+const P = styled.p`
+  position: absolute;
+  top: 26.5rem;
   margin-left: 35rem;
 `;
 
@@ -45,59 +73,59 @@ const Footer = () => {
       <Solutions>
         <SolutionsDiv>
           <h3 >Network security solutions</h3>
-          <SolutionsP>Brausers antivirus</SolutionsP>
-          <SolutionsP>VPN for Windows</SolutionsP>
-          <SolutionsP>VPN for MacOS </SolutionsP>
-          <SolutionsP>VPN for Linux</SolutionsP>
-          <SolutionsP>All VPNs</SolutionsP>
-          <SolutionsP>All Antivirus</SolutionsP>
+          <SolutionsA>Brausers antivirus</SolutionsA>
+          <SolutionsA>VPN for Windows</SolutionsA>
+          <SolutionsA>VPN for MacOS </SolutionsA>
+          <SolutionsA>VPN for Linux</SolutionsA>
+          <SolutionsA>All VPNs</SolutionsA>
+          <SolutionsA>All Antivirus</SolutionsA>
         </SolutionsDiv>
         <SolutionsDiv>
           <h3>PC or laptop antivirus</h3>
-          <SolutionsP>
+          <SolutionsA>
             <FaWindows />
             Windows Antivirus
-          </SolutionsP>
-          <SolutionsP>
+          </SolutionsA>
+          <SolutionsA>
             <RiFinderFill />
             MacOS Antivirus
-          </SolutionsP>
-          <SolutionsP>
+          </SolutionsA>
+          <SolutionsA>
             <FaLinux />
             Linux Antivirus
-          </SolutionsP>
-          <SolutionsP>
+          </SolutionsA>
+          <SolutionsA>
             <IoPhonePortraitOutline />
             Phone Antivirus
-          </SolutionsP>
-          <SolutionsP>All Antiviruses</SolutionsP>
+          </SolutionsA>
+          <SolutionsA>All Antiviruses</SolutionsA>
         </SolutionsDiv>
         <SolutionsDiv>
           <h3>Kids on Internet</h3>
-          <SolutionsP>Parental control</SolutionsP>
-          <SolutionsP>Brausers Security</SolutionsP>
-          <SolutionsP>Time of using</SolutionsP>
-          <SolutionsP>All Solutions for kids</SolutionsP>
+          <SolutionsA>Parental control</SolutionsA>
+          <SolutionsA>Brausers Security</SolutionsA>
+          <SolutionsA>Time of using</SolutionsA>
+          <SolutionsA>All Solutions for kids</SolutionsA>
         </SolutionsDiv>
         <SolutionsDiv>
           <h3>Social Media</h3>
-          <SolutionsP href="https://t.me/UzSafetynews">
+          <SolutionsA href="https://t.me/UzSafetynews">
             <FaTelegram />
             Telegram
-          </SolutionsP>
-          <SolutionsP>
+          </SolutionsA>
+          <SolutionsA>
             <FaInstagramSquare />
             Instagram
-          </SolutionsP>
-          <SolutionsP href="https://www.youtube.com/watch?v=lpa8uy4DyMo&list=PL9ooVrP1hQOGPQVeapGsJCktzIO4DtI4_">
+          </SolutionsA>
+          <SolutionsA href="https://www.youtube.com/watch?v=lpa8uy4DyMo&list=PL9ooVrP1hQOGPQVeapGsJCktzIO4DtI4_">
             <FaYoutube />
             Youtube
-          </SolutionsP>
-          <SolutionsP href="https://x.com/home">
+          </SolutionsA>
+          <SolutionsA href="https://x.com/home">
             <FaSquareXTwitter />
             X.com
-          </SolutionsP>
-          <SolutionsP>All information about us</SolutionsP>
+          </SolutionsA>
+          <SolutionsA>All information about us</SolutionsA>
         </SolutionsDiv>
       </Solutions>
       <FooterLine></FooterLine>
