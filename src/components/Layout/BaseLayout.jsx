@@ -4,14 +4,13 @@ import styled from "styled-components";
 
 const Container = styled("div")`
   height: 100vh;
-  background-color: ${({ theme }) => theme.primary};
 `;
 
 const ChildrenComponent = styled("div")`
   color: white;
 `;
 
-const BaseLayout = ({ children, theme, toggleTheme }) => {
+const BaseLayout = ({ children }) => {
   return (
     <Container>
       <Navbar></Navbar>

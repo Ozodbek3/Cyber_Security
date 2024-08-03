@@ -8,7 +8,6 @@ import responses from "./components/responses.json";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.primary};
 `;
 const Invisible = styled("div")`
   position: fixed;
@@ -81,7 +80,7 @@ const Sec1_photo = styled.video`
   width: 45%;
   background-color: red;
 `;
-const HomeContainer = ({ theme }) => {
+const HomeContainer = () => {
   const [open, setOpen] = useState(false);
   const [width, setWidth] = useState("7vh");
   const [height, setHeight] = useState("7vh");
