@@ -1,17 +1,17 @@
-import styled from "styled-components";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { useState, useEffect } from "react";
 import { Search } from "react-feather";
 import { RxCross2 } from "react-icons/rx";
-import Double from "../../utils/world.png"
+import Double from "../../utils/world.png";
+import { data } from "./components/responses";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #1D3557;
+  background-color: #1d3557;
 `;
-const Invisible = styled("div")`
+
+const Invisible = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -19,19 +19,22 @@ const Invisible = styled("div")`
   height: 100vh;
   z-index: 50;
 `;
-const Closed = styled("div")`
+
+const Closed = styled.div`
   position: absolute;
   width: 1rem;
   height: 1rem;
   left: 200vw;
 `;
+
 const Section = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 `;
-const Minidiv = styled("div")`
+
+const Minidiv = styled.div`
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -40,36 +43,50 @@ const Minidiv = styled("div")`
   transition: top 0.3s ease, left 0.3s ease, height 0.3s ease, width 0.3s ease,
     border-radius 0.3s ease;
 `;
-const Response = styled("div")`
+
+const Response = styled.div`
   width: 90%;
   height: 70%;
+  padding-top: 2%;
   margin-left: 5%;
+  font-size: 1.5rem;
   overflow-y: scroll;
   &::-webkit-scrollbar {
     display: none;
   }
 `;
-const Buttons = styled("div")`
+
+const Buttons = styled.div`
   display: flex;
   width: 90%;
   height: 20%;
   margin-left: 5%;
   background-color: white;
 `;
-const Button = styled("div")`
+
+const Button = styled.div`
   width: 25%;
   height: 30%;
   margin: 0 2%;
   background-color: red;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
 `;
+
 const TextCon = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10rem;
   width: 50%;
-`
-const Circle = styled("div")`
+`;
+
+const Circle = styled.div`
   position: fixed;
   cursor: pointer;
   top: 86%;
@@ -79,20 +96,22 @@ const Circle = styled("div")`
   border-radius: 50%;
   background-color: blue;
 `;
-const Sec1_text = styled.div`
 
+const Sec1_text = styled.div`
   height: 60%;
   width: 70%;
   color: white;
-  `;
-  const GlobeAnimation = keyframes`
-    from{
-      background-position: 0 0;
-    }
-    to{
-      background-position: 100% 100%;
-    }
-  `
+`;
+
+const GlobeAnimation = keyframes`
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+`;
+
 const Sec1_photo = styled.div`
   position: relative;
   height: 80%;
@@ -105,10 +124,35 @@ const Sec1_photo = styled.div`
 `;
 
 const HomeContainer = () => {
-
   const [open, setOpen] = useState(false);
+
   const [width, setWidth] = useState("7vh");
+
   const [height, setHeight] = useState("7vh");
+
+  const [selectedDescription, setSelectedDescription] = useState("");
+
+  const [displayedDescription, setDisplayedDescription] = useState("");
+
+  const typeDescription = (description) => {
+    let index = 0;
+    setDisplayedDescription("");
+
+    const typingEffect = () => {
+      if (index < description.length) {
+        setDisplayedDescription((prev) => prev + description[index]);
+        index++;
+        setTimeout(typingEffect, 15); // Adjust typing speed here
+      }
+    };
+
+    typingEffect();
+  };
+
+  const handleClick = (description) => {
+    setSelectedDescription(description);
+    typeDescription(description);
+  };
 
   const Change = () => {
     if (!open) {
@@ -142,30 +186,23 @@ const HomeContainer = () => {
     <Container>
       <Invisible onClick={invisible} />
       <Section>
-        <Sec1_photo></Sec1_photo>
+        <Sec1_photo />
         <TextCon>
-            <Sec1_text>
-              <h1>
-                Sizni kimdir internetda xavfaga solmoqdami?
-              </h1>
-              <h1>
-                Balki sizdan pull og'irlashmoqchimi?
-              </h1>
-              <h1>
-                Reklamadan norozi yoki reklama yolg'on gapirayaptimi?
-              </h1>
-            </Sec1_text>
-            
-            <Sec1_text>
-              <h1>
-                Biz siz kabi insonlar dunyo boylab qonun buzarlarni qolga olish, ularga odam aldashga halal berishga saytimizni yaratdik
-              </h1>
-            </Sec1_text>
+          <Sec1_text>
+            <h1>Sizni kimdir internetda xavfaga solmoqdami?</h1>
+            <h1>Balki sizdan pull og'irlashmoqchimi?</h1>
+            <h1>Reklamadan norozi yoki reklama yolg'on gapirayaptimi?</h1>
+          </Sec1_text>
+          <Sec1_text>
+            <h1>
+              Biz siz kabi insonlar dunyo boylab qonun buzarlarni qolga olish,
+              ularga odam aldashga halal berishga saytimizni yaratdik
+            </h1>
+          </Sec1_text>
         </TextCon>
       </Section>
 
       <Section>2</Section>
-
       <Section>3</Section>
       <Circle>
         {open === false ? (
@@ -183,13 +220,20 @@ const HomeContainer = () => {
           borderRadius: open ? "2rem" : "50%",
         }}
       >
-        {open === false ? <Closed /> : <Response></Response>}
+        {open === false ? (
+          <Closed />
+        ) : (
+          <Response>{displayedDescription}</Response>
+        )}
         {open === false ? (
           <Closed />
         ) : (
           <Buttons>
-            <Button></Button>
-            <Button></Button>
+            {data.map((item, index) => (
+              <Button key={index} onClick={() => handleClick(item.description)}>
+                {item.name}
+              </Button>
+            ))}
           </Buttons>
         )}
       </Minidiv>
