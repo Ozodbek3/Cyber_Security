@@ -6,7 +6,7 @@ const FooterDiv = styled.div`
     position: relative;
     bottom: 2%;
     width: 100%;
-    height: 60%;
+    height: 50%;
     background-color: ${({theme}) => theme.footer};
 `
 const Safetyh3 = styled.h3`
