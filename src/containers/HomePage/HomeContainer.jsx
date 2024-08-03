@@ -6,8 +6,6 @@ const Container = styled("div")`
   flex-wrap: wrap;
   width: 100%;
   height: 100vh;
-  z-index: 100;
-  background-color: ${({ theme }) => theme.secondary};
 `;
 
 const HomeContainer = ({ theme }) => {
