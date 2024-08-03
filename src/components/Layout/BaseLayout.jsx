@@ -8,10 +8,7 @@ const Container = styled("div")`
 `;
 
 const ChildrenComponent = styled("div")`
-  width: 100%;
-  height: 100%;
-  top: 8vh;
-  background-color: ${({ theme }) => theme.primary};
+  color: white;
 `;
 
 const BaseLayout = ({ children, theme, toggleTheme }) => {
