@@ -3,11 +3,9 @@ import styled from "styled-components";
 
 
 const FooterDiv = styled.div`
-    position: relative;
-    bottom: 2%;
-    width: 100%;
-    height: 50%;
-    background-color: ${({theme}) => theme.footer};
+  width: 100%;
+  height: 20rem;
+  background-color: ${({theme}) => theme.footer};
 `
 const Safetyh3 = styled.h3`
   margin-top:16rem;

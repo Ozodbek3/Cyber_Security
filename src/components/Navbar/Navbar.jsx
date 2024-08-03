@@ -7,8 +7,9 @@ const Nav = styled.div`
     justify-content: space-evenly;
     z-index: 100;
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0px;
+    width: 100%;
     height: 12%;
     background-color: ${({theme}) => theme.nav.background};
 `
