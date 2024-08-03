@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const Container = styled("div")`
   height: 100vh;
+  background-color: #1D3557;
 `;
 
 const ChildrenComponent = styled("div")`
