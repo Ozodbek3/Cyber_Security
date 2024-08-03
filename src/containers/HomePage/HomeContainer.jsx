@@ -1,20 +1,20 @@
-import styled from "styled-components";
-import { useState } from "react";
-import { useEffect } from "react";
-import {keyframes} from "styled-components";
-import inkognit from "../../utils/detective.png"
+import styled, { keyframes } from "styled-components";
+import { useState, useEffect } from "react";
 import { Search } from "react-feather";
 import { RxCross2 } from "react-icons/rx";
+import Double from "../../utils/world.png";
+import inkognit from "../../utils/detective.png"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Double from "../../utils/world.png"
+import { data } from "./components/responses";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #1D3557;
+  background-color: #1d3557;
 `;
-const Invisible = styled("div")`
+
+const Invisible = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -22,19 +22,22 @@ const Invisible = styled("div")`
   height: 100vh;
   z-index: 50;
 `;
-const Closed = styled("div")`
+
+const Closed = styled.div`
   position: absolute;
   width: 1rem;
   height: 1rem;
   left: 200vw;
 `;
 const Section1 = styled.div`
+
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 `;
-const Minidiv = styled("div")`
+
+const Minidiv = styled.div`
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -43,36 +46,50 @@ const Minidiv = styled("div")`
   transition: top 0.3s ease, left 0.3s ease, height 0.3s ease, width 0.3s ease,
     border-radius 0.3s ease;
 `;
-const Response = styled("div")`
+
+const Response = styled.div`
   width: 90%;
   height: 70%;
+  padding-top: 2%;
   margin-left: 5%;
+  font-size: 1.5rem;
   overflow-y: scroll;
   &::-webkit-scrollbar {
     display: none;
   }
 `;
-const Buttons = styled("div")`
+
+const Buttons = styled.div`
   display: flex;
   width: 90%;
   height: 20%;
   margin-left: 5%;
   background-color: white;
 `;
-const Button = styled("div")`
+
+const Button = styled.div`
   width: 25%;
   height: 30%;
   margin: 0 2%;
   background-color: red;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
 `;
+
 const TextCon = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10rem;
   width: 50%;
-`
-const Circle = styled("div")`
+`;
+
+const Circle = styled.div`
   position: fixed;
   cursor: pointer;
   top: 86%;
@@ -82,20 +99,22 @@ const Circle = styled("div")`
   border-radius: 50%;
   background-color: blue;
 `;
-const Sec1_text = styled.div`
 
+const Sec1_text = styled.div`
   height: 60%;
   width: 70%;
   color: white;
-  `;
-  const GlobeAnimation = keyframes`
-    from{
-      background-position: 0 0;
-    }
-    to{
-      background-position: 100% 100%;
-    }
-  `
+`;
+
+const GlobeAnimation = keyframes`
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+`;
+
 const Sec1_photo = styled.div`
   position: relative;
   height: 80%;
@@ -136,12 +155,40 @@ const Section3 = styled.div`
   height: 100vh;
 `
 const HomeContainer = () => {
+
   useEffect(() => {
     AOS.init();
   }, [])
+
   const [open, setOpen] = useState(false);
+
   const [width, setWidth] = useState("7vh");
+
   const [height, setHeight] = useState("7vh");
+
+  const [selectedDescription, setSelectedDescription] = useState("");
+
+  const [displayedDescription, setDisplayedDescription] = useState("");
+
+  const typeDescription = (description) => {
+    let index = 0;
+    setDisplayedDescription("");
+
+    const typingEffect = () => {
+      if (index < description.length) {
+        setDisplayedDescription((prev) => prev + description[index]);
+        index++;
+        setTimeout(typingEffect, 15); // Adjust typing speed here
+      }
+    };
+
+    typingEffect();
+  };
+
+  const handleClick = (description) => {
+    setSelectedDescription(description);
+    typeDescription(description);
+  };
 
   const Change = () => {
     if (!open) {
@@ -228,13 +275,20 @@ const HomeContainer = () => {
           borderRadius: open ? "2rem" : "50%",
         }}
       >
-        {open === false ? <Closed /> : <Response></Response>}
+        {open === false ? (
+          <Closed />
+        ) : (
+          <Response>{displayedDescription}</Response>
+        )}
         {open === false ? (
           <Closed />
         ) : (
           <Buttons>
-            <Button></Button>
-            <Button></Button>
+            {data.map((item, index) => (
+              <Button key={index} onClick={() => handleClick(item.description)}>
+                {item.name}
+              </Button>
+            ))}
           </Buttons>
         )}
       </Minidiv>
