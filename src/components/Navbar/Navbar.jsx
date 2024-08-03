@@ -5,6 +5,7 @@ import { IoLogInSharp } from "react-icons/io5";
 const Nav = styled.div`
     display: flex;
     justify-content: space-evenly;
+    z-index: 100;
     align-items: center;
     position: sticky;
     top: 0px;
