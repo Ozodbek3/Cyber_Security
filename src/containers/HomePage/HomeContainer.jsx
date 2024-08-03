@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {keyframes} from "styled-components";
 import { Search } from "react-feather";
 import { RxCross2 } from "react-icons/rx";
-import responses from "./components/responses.json";
+import Double from "../../utils/world.png"
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.primary};
+  background-color: #1D3557;
 `;
 const Invisible = styled("div")`
   position: fixed;
@@ -61,6 +62,13 @@ const Button = styled("div")`
   margin: 0 2%;
   background-color: red;
 `;
+const TextCon = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rem;
+  width: 50%;
+`
 const Circle = styled("div")`
   position: fixed;
   cursor: pointer;
@@ -72,15 +80,30 @@ const Circle = styled("div")`
   background-color: blue;
 `;
 const Sec1_text = styled.div`
+
   height: 60%;
-  width: 45%;
+  width: 70%;
   color: white;
-`;
-const Sec1_photo = styled.video`
+  `;
+  const GlobeAnimation = keyframes`
+    from{
+      background-position: 0 0;
+    }
+    to{
+      background-position: 100% 100%;
+    }
+  `
+const Sec1_photo = styled.div`
+  position: relative;
   height: 80%;
-  width: 45%;
-  background-color: red;
+  width: 50%;
+  border: 4px solid black;
+  border-radius: 100%;
+  background-size: cover;
+  animation: rotate 20s linear infinite, ${GlobeAnimation} 10s linear infinite;
+  background-image: url(${Double});
 `;
+
 const HomeContainer = ({ theme }) => {
   const [open, setOpen] = useState(false);
   const [width, setWidth] = useState("7vh");
@@ -119,12 +142,25 @@ const HomeContainer = ({ theme }) => {
       <Invisible onClick={invisible} />
       <Section>
         <Sec1_photo></Sec1_photo>
-        <Sec1_text>
-          <h4>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque
-            placeat molestiae laudantium.
-          </h4>
-        </Sec1_text>
+        <TextCon>
+            <Sec1_text>
+              <h1>
+                Sizni kimdir internetda xavfaga solmoqdami?
+              </h1>
+              <h1>
+                Balki sizdan pull og'irlashmoqchimi?
+              </h1>
+              <h1>
+                Reklamadan norozi yoki reklama yolg'on gapirayaptimi?
+              </h1>
+            </Sec1_text>
+            
+            <Sec1_text>
+              <h1>
+                Biz siz kabi insonlar dunyo boylab qonun buzarlarni qolga olish, ularga odam aldashga halal berishga saytimizni yaratdik
+              </h1>
+            </Sec1_text>
+        </TextCon>
       </Section>
 
       <Section>2</Section>
