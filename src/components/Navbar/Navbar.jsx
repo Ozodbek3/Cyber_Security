@@ -50,8 +50,7 @@ const Navbar = () => {
         <MdNotificationsActive size={24}></MdNotificationsActive>
       </Nav_text>
       <Nav_text>
-        Sozlamalar
-        <IoMdSettings size={24}></IoMdSettings>
+        Reklamaga shikoyat
       </Nav_text>
       <Nav_text onClick={cookieData("username").getValue() === "" ? () => navigate(LOGIN_PAGE) : () => navigate(ACCOUNT_PAGE)}>
         Akkaunt

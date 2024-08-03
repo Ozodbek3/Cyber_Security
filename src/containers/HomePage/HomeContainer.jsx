@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import {keyframes} from "styled-components";
+import inkognit from "../../utils/detective.png"
 import { Search } from "react-feather";
 import { RxCross2 } from "react-icons/rx";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Double from "../../utils/world.png"
 
 const Container = styled.div`
@@ -25,7 +28,7 @@ const Closed = styled("div")`
   height: 1rem;
   left: 200vw;
 `;
-const Section = styled.div`
+const Section1 = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,8 +107,38 @@ const Sec1_photo = styled.div`
   background-image: url(${Double});
 `;
 
+const Section2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+`
+const Section2_UpperPart = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
+`
+const DikPic = styled.img`
+  
+`
+const Sec2_text = styled.h1`
+  
+`
+const SafeUz = styled.div`
+  height: 100vh;
+  width: 100%;
+  
+`
+const Section3 = styled.div`
+  width: 100%;
+  height: 100vh;
+`
 const HomeContainer = () => {
-
+  useEffect(() => {
+    AOS.init();
+  }, [])
   const [open, setOpen] = useState(false);
   const [width, setWidth] = useState("7vh");
   const [height, setHeight] = useState("7vh");
@@ -141,10 +174,13 @@ const HomeContainer = () => {
   return (
     <Container>
       <Invisible onClick={invisible} />
-      <Section>
-        <Sec1_photo></Sec1_photo>
+      <SafeUz>
+
+      </SafeUz>
+      <Section1>
+        <Sec1_photo data-aos="fade-up" data-aos-duration="2000"></Sec1_photo>
         <TextCon>
-            <Sec1_text>
+            <Sec1_text data-aos="fade-up" data-aos-duration="2000">
               <h1>
                 Sizni kimdir internetda xavfaga solmoqdami?
               </h1>
@@ -156,17 +192,26 @@ const HomeContainer = () => {
               </h1>
             </Sec1_text>
             
-            <Sec1_text>
+            <Sec1_text data-aos="fade-up" data-aos-duration="2000">
               <h1>
                 Biz siz kabi insonlar dunyo boylab qonun buzarlarni qolga olish, ularga odam aldashga halal berishga saytimizni yaratdik
               </h1>
             </Sec1_text>
         </TextCon>
-      </Section>
+      </Section1>
+      <Section2>
+        <Section2_UpperPart>
+          <DikPic src={inkognit} data-aos="fade-up" data-aos-duration="2000"/>
+        </Section2_UpperPart>
+        <Sec2_text data-aos="fade-up" data-aos-duration="2000">Ehtiyot boling!</Sec2_text>
+        <Sec2_text data-aos="fade-up" data-aos-duration="2000">Internetda shaxsiy malumotlaringizni ishlatishni kamaytiring!</Sec2_text> <br />
+        <Sec2_text data-aos="fade-up" data-aos-duration="2000">Sizning malumotlaringizdan qonunbuzarlar o'z foydasiga foylanishadi!</Sec2_text> <br />
+        <Sec2_text data-aos="fade-up" data-aos-duration="2000">Agar siznig malumotlaringiz internetga qoyib yuborilishi bilan topsa qilishsa biz yoki militsiya hodimlari bilan aloqaga chiqing!</Sec2_text> <br />
+        <Sec2_text data-aos="fade-up" data-aos-duration="2000">Kim yozayotganini tekshiring! Hamma ham sizga do'st emas!</Sec2_text>
+        
+      </Section2>
 
-      <Section>2</Section>
-
-      <Section>3</Section>
+      <Section3>3</Section3>
       <Circle>
         {open === false ? (
           <Search onClick={Change} size={35} />
