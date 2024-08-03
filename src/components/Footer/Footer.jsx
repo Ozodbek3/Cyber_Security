@@ -6,14 +6,20 @@ const FooterDiv = styled.div`
     position: relative;
     bottom: 2%;
     width: 100%;
-    height: 10%;
-    background-color: red;
+    height: 50%;
+    background-color: ${({theme}) => theme.footer};
+`
+const Safetyh3 = styled.h3`
+  margin-top:16rem;
+  margin-left: 3rem;
 `
 
 const Footer = () => {
   return (
     <FooterDiv>
-      <p>�� 2023 Cyber Security Solutions. All rights reserved.</p>
+      <h3>Network security solutions</h3>
+      <Safetyh3>UzSafety Network </Safetyh3>
+      
     </FooterDiv>
   );
 };

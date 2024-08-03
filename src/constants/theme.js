@@ -7,6 +7,7 @@ export const LightMode = {
     hover:" rgba(3, 180, 255)",
     input: "black",
     reverse: "white"
+
 }
 
 export const DarkMode = {
