@@ -1,13 +1,14 @@
 export const LightMode = {
-    primary: "white",
+    primary: "#1D3557",
     secondary: "rgb(240, 240, 240)",
     color: "white",   
     shadow:" rgba(122, 223, 235, 0.5)",
     footer:"#0597F2",
     hover:" rgba(3, 180, 255)",
     input: "black",
-    reverse: "white"
-
+    nav:{
+        background:"transparent"
+    }
 }
 
 export const DarkMode = {
