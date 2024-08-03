@@ -104,7 +104,8 @@ const Sec1_photo = styled.div`
   background-image: url(${Double});
 `;
 
-const HomeContainer = ({ theme }) => {
+const HomeContainer = () => {
+
   const [open, setOpen] = useState(false);
   const [width, setWidth] = useState("7vh");
   const [height, setHeight] = useState("7vh");

@@ -11,7 +11,7 @@ const ChildrenComponent = styled("div")`
   color: white;
 `;
 
-const BaseLayout = ({ children, theme, toggleTheme }) => {
+const BaseLayout = ({ children }) => {
   return (
     <Container>
       <Navbar></Navbar>
