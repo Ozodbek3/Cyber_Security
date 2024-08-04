@@ -9,17 +9,18 @@ import { parol } from "./emails";
 // Styled Components
 const LoginFormContainer = styled.div`
   display: flex;
+  border: 2px solid;
+  border-radius: 2px;
   flex-direction: column;
   border-radius: 5px;
   padding: 30px;
   width: 25vw;
   height: 35vh;
   border-radius: 3rem;
-  box-shadow: 60px -16px rgba(149, 185, 228, 0.8);
 `;
 const Login = styled.div``;
 const LoginFormTitle = styled.h2`
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   margin-left: 2.6rem;
 `;
 const LoginFormInput = styled.input`
@@ -29,24 +30,23 @@ const LoginFormInput = styled.input`
   margin-bottom: 20px;
   width: 70%;
   font-size: 16px;
-  box-shadow: 14px -9px teal;
 `;
 const LoginFormButton = styled.button`
   cursor: pointer;
   margin-left: 10%;
-  width: 6rem;
+  width: 8rem;
   height: 2.5rem;
   border: none;
   border-radius: 2rem;
   color: white;
-  background-color: rgb(76, 175, 80);
-  box-shadow: 14px -9px teal;
+  background-color: rgb(80, 241, 86);
   &:hover {
     transition: 0.3s;
-    background-color: rgb(62, 142, 65);
+    background-color: rgb(73, 177, 77);
   }
 `;
 const PhoneNum = styled.h4`
+  color: #b58a8a;
   cursor: pointer;
   &&:hover {
     text-decoration: underline;
@@ -65,7 +65,6 @@ const PhoneInput = styled.input`
   margin-bottom: 20px;
   width: 70%;
   font-size: 20px;
-  box-shadow: 14px -9px teal;
 `;
 const LoginPhone = styled.div``;
 const LoginPhoneButton = styled.button`
@@ -73,7 +72,7 @@ const LoginPhoneButton = styled.button`
   top: 3rem;
   left: 2.5rem;
   cursor: pointer;
-  width: 6rem;
+  width: 6rem;  
   height: 2.5rem;
   border: none;
   border-radius: 2rem;
@@ -160,7 +159,7 @@ const LoginForm = () => {
           <form onSubmit={handleSubmit}>
             <LoginFormInput
               type="text"
-              placeholder="Username"
+              placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
