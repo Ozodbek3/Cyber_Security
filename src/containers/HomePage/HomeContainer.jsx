@@ -210,8 +210,8 @@ const AppsLogo = styled.img`
 const Sec4_con = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 10%;
-  width: 45%;
+  gap: 1px;
+  width: 47%;
   height: 80%;
 `
 const HomeContainer = () => {
