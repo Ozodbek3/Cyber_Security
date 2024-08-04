@@ -238,7 +238,7 @@ const HomeContainer = () => {
       if (index < description.length) {
         setDisplayedDescription((prev) => prev + description[index]);
         index++;
-        setTimeout(typingEffect, 15); // Adjust typing speed here
+        setTimeout(typingEffect, 25); // Adjust typing speed here
       }
     };
 
