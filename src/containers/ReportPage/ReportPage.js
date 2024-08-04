@@ -1,4 +1,4 @@
-import ReportContainer from "./ReportPage"
+import ReportContainer from "./ReportContainer"
 import BaseLayout from "../../components/Layout/BaseLayout"
 import * as ROUTES from "../../constants/routes"
 

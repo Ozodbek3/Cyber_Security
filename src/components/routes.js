@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import NotFoundPage from "./Not Found/Not_Found";
 
-const RoutesContainer = ({ routes, toggleTheme }) => {
+const RoutesContainer = ({ routes }) => {
   return (
     <Routes>
       {routes.map((route, index) => {
