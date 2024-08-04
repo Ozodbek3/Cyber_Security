@@ -15,12 +15,13 @@ const FooterDiv = styled.div`
   width: 100%;
   height: 60%;
   z-index: 60;
-  background-color: blue;
+  background-color: #0a0808e3;
 `;
 const Safetyh3 = styled.h3`
   position: absolute;
   top: 23rem;
   margin-left: 40rem;
+  color: white;
 `;
 const FooterLine = styled.div`
   position: absolute;
@@ -51,7 +52,7 @@ const SolutionsA = styled.a`
   align-items: center;
   height: 2rem;
   cursor: pointer;
-  color: black;
+  color: white;
   &&:hover {
     text-decoration: underline;
     text-decoration-thickness: 0.5px;
@@ -67,6 +68,7 @@ const P = styled.p`
   position: absolute;
   top: 25rem;
   margin-left: 35rem;
+  color: white;
 `;
 
 const Footer = () => {
@@ -74,7 +76,7 @@ const Footer = () => {
       <FooterDiv>
         <Solutions>
           <SolutionsDiv>
-            <h3>Network security solutions</h3>
+            <h3 style={{color:"white"}}>Network security solutions</h3>
             <SolutionsA>Brausers antivirus</SolutionsA>
             <SolutionsA>VPN for Windows</SolutionsA>
             <SolutionsA>VPN for MacOS</SolutionsA>
@@ -83,7 +85,7 @@ const Footer = () => {
             <SolutionsA>All Antivirus</SolutionsA>
           </SolutionsDiv>
           <SolutionsDiv>
-            <h3>PC or laptop antivirus</h3>
+            <h3 style={{color:"white"}}>PC or laptop antivirus</h3>
             <SolutionsA>
               <span><FaWindows /></span>
               Windows Antivirus
@@ -103,14 +105,14 @@ const Footer = () => {
             <SolutionsA>All Antiviruses</SolutionsA>
           </SolutionsDiv>
           <SolutionsDiv>
-            <h3>Kids on Internet</h3>
+            <h3 style={{color:"white"}}>Kids on Internet</h3>
             <SolutionsA>Parental control</SolutionsA>
             <SolutionsA>Brausers Security</SolutionsA>
             <SolutionsA>Time of using</SolutionsA>
             <SolutionsA>All Solutions for kids</SolutionsA>
           </SolutionsDiv>
           <SolutionsDiv>
-            <h3>Social Media</h3>
+            <h3 style={{color:"white"}}>Social Media</h3>
             <SolutionsA href="https://t.me/UzSafetynews">
               <span><FaTelegram /></span>
               Telegram
