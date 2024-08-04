@@ -6,6 +6,7 @@ import Double from "../../utils/world.png";
 import inkognit from "../../utils/detective.png"
 import fish from "../../utils/phishing.png"
 import https from "../../utils/https.png"
+import Uz from "../../utils/logo.png"
 import malware from "../../utils/malware.webp"
 import defender from "../../utils/metadefender.webp"
 import virus from "../../utils/virustotal.png"
@@ -189,9 +190,10 @@ const Section4 = styled.div`
   height: 100vh;
 `
 const Logomiz = styled.div`
-  height: 20%;
+  height: 40%;
   width: 20%;
-  background-color: red;
+  background-size: cover;
+  background-image: url(${Uz});
 `
 const Sec4_text = styled.div`
   display: flex;
@@ -280,7 +282,7 @@ const HomeContainer = () => {
     <Container>
       <Invisible onClick={invisible} />
       <SafeUz>
-        <Logomiz>Buni background img si logomiz</Logomiz>
+        <Logomiz></Logomiz>
       </SafeUz>
       <Section1>
         <Sec1_photo data-aos="fade-up" data-aos-duration="2000"></Sec1_photo>
