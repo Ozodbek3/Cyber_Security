@@ -15,6 +15,7 @@ const Account = styled("div")`
   margin: 0 auto;
   margin-top: 12vh;
   border-radius: 0.5rem;
+  background-color: blue  
 `;
 
 const Avatar = styled("div")`
@@ -25,6 +26,8 @@ const Avatar = styled("div")`
   width: 10vw;
   height: 10vw;
   font-size: 1.8rem;
+  margin-left: 30px;
+  margin-top: 20px;
 `;
 const UserDiv = styled("div")`
   display: flex;
@@ -35,6 +38,7 @@ const UserDiv = styled("div")`
   border-radius: 50%;
   color: white;
   background-color: gray;
+  margin-top:20px;
 `;
 const Infolar = styled('div')`
   display: flex;
@@ -42,6 +46,7 @@ const Infolar = styled('div')`
   width: 100%;
   height: 50%;
   margin-top: 4%;
+  color: black;
 `;
 const InfoDiv = styled("div")`
   display: flex;
@@ -52,6 +57,7 @@ const InfoDiv = styled("div")`
   height: 8vh;
   margin: 3rem 11rem;
   border-radius: 1rem;
+  border:2px solid black;
 `;
 const Infos = styled("p")`
   position: relative;
