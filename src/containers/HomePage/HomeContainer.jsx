@@ -4,6 +4,11 @@ import { Search } from "react-feather";
 import { RxCross2 } from "react-icons/rx";
 import Double from "../../utils/world.png";
 import inkognit from "../../utils/detective.png"
+import fish from "../../utils/phishing.png"
+import https from "../../utils/https.png"
+import malware from "../../utils/malware.webp"
+import defender from "../../utils/metadefender.webp"
+import virus from "../../utils/virustotal.png"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { data } from "./components/responses";
@@ -12,7 +17,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #1d3557;
-`;
+  `;
 
 const Invisible = styled.div`
   position: fixed;
@@ -21,7 +26,18 @@ const Invisible = styled.div`
   width: 100vw;
   height: 100vh;
   z-index: 50;
-`;
+  `;
+const fishAnim = keyframes`
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
+  }
+`
 
 const Closed = styled.div`
   position: absolute;
@@ -140,19 +156,61 @@ const Section2_UpperPart = styled.div`
   width: 100%;
 `
 const DikPic = styled.img`
-  
+  position: relative;
+  animation: 2s infinite ${fishAnim} ease-in-out;
 `
 const Sec2_text = styled.h1`
   
 `
 const SafeUz = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   width: 100%;
   
+  `
+const Fishing = styled.img`
+  position: relative;
+  animation: 2s infinite ${fishAnim} ease-in-out;
 `
 const Section3 = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   width: 100%;
   height: 100vh;
+`
+const Section4 = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+`
+const Logomiz = styled.div`
+  height: 20%;
+  width: 20%;
+  background-color: red;
+`
+const Sec4_text = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 3px;
+  height: 80%;
+  width: 45%;
+`
+const AppsLogo = styled.img`
+  width: 50%;
+  height: 20%;
+`
+const Sec4_con = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10%;
+  width: 45%;
+  height: 80%;
 `
 const HomeContainer = () => {
 
@@ -222,7 +280,7 @@ const HomeContainer = () => {
     <Container>
       <Invisible onClick={invisible} />
       <SafeUz>
-
+        <Logomiz>Buni background img si logomiz</Logomiz>
       </SafeUz>
       <Section1>
         <Sec1_photo data-aos="fade-up" data-aos-duration="2000"></Sec1_photo>
@@ -258,7 +316,24 @@ const HomeContainer = () => {
         
       </Section2>
 
-      <Section3>3</Section3>
+      <Section3>
+        <Sec2_text data-aos="fade-up" data-aos-duration="2000">
+          <h4>Web saytlarga malumot kiritishdan <br /> oldin uni rostligiga ahamiyat bering. <br /> Agar websayt https yozuviga ega bolmasa <br /> unga malumot kiritmang</h4>
+        </Sec2_text>
+        <Fishing src={fish} alt="" data-aos="fade-up" data-aos-duration="2000"/>
+         <Sec2_text data-aos="fade-up" data-aos-duration="2000">
+          <h4>Phishing - qalbaki sayt yordamida <br /> malumotlarni og'irlash</h4>
+        </Sec2_text>
+      </Section3>
+      <Section4>
+        <Sec4_text data-aos="fade-up" data-aos-duration="2000"><h2>Biz sizga taqdim etgan amallardan tashqari yana quyidagi havolalarni taklif etamiz. <br /> Bizning jamoa siz internetda tinch yurishingiz uchun ularni tekshirib chiqdi.</h2> </Sec4_text>
+        <Sec4_con>
+          <AppsLogo src={malware} alt="" />
+          <AppsLogo src={https} alt="" />
+          <AppsLogo src={defender} alt="" />
+          <AppsLogo src={virus} alt="" />
+        </Sec4_con>
+      </Section4>
       <Circle>
         {open === false ? (
           <Search onClick={Change} size={35} />
