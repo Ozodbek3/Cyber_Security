@@ -8,6 +8,7 @@ const Container = styled.div`
     width: 100%;
     margin-top: 8%;
     flex-direction: column;
+    background-color: #1d3557;
 `
 const Muammo = styled.form`
     display: flex;
