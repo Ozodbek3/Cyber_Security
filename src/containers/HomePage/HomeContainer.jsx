@@ -16,6 +16,7 @@ import { data } from "./components/responses";
 import { IoMdSend } from "react-icons/io";
 
 
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -176,6 +177,7 @@ const SafeUz = styled.div`
   align-items: center;
   height: 100vh;
   width: 100%;
+  background-image: url("https://www.ceo-review.com/wp-content/uploads/2020/11/cyber.jpg");
   
   `
 const Fishing = styled.img`
@@ -241,6 +243,13 @@ const Sorovlar = styled.h3`
   top:1rem ;
   left:1rem ;
   color:grey;
+`
+const Xuesos = styled.div`
+  position: absolute;
+  top: 24rem;
+  width: 120vw;
+  height: 50%;
+  background: linear-gradient( transparent, #5f5d5d);
 `
 const HomeContainer = () => {
 
@@ -310,6 +319,7 @@ const HomeContainer = () => {
     <Container>
       <Invisible onClick={invisible} />
       <SafeUz>
+        <Xuesos></Xuesos>
         <Logomiz></Logomiz>
       </SafeUz>
       <Section1>

@@ -117,7 +117,7 @@ const Footer = () => {
               <span><FaTelegram /></span>
               Telegram
             </SolutionsA>
-            <SolutionsA>
+            <SolutionsA href="https://www.instagram.com/">
               <span><FaInstagramSquare /></span>
               Instagram
             </SolutionsA>
