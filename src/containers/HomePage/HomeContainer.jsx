@@ -160,7 +160,7 @@ const DikPic = styled.img`
   position: relative;
   animation: 2s infinite ${fishAnim} ease-in-out;
 `
-const Sec2_text = styled.h1`
+const Sec2_text = styled.div`
   
 `
 const SafeUz = styled.div`
@@ -310,21 +310,21 @@ const HomeContainer = () => {
         <Section2_UpperPart>
           <DikPic src={inkognit} data-aos="fade-up" data-aos-duration="2000"/>
         </Section2_UpperPart>
-        <Sec2_text data-aos="fade-up" data-aos-duration="2000">Ehtiyot boling!</Sec2_text>
-        <Sec2_text data-aos="fade-up" data-aos-duration="2000">Internetda shaxsiy malumotlaringizni ishlatishni kamaytiring!</Sec2_text> <br />
-        <Sec2_text data-aos="fade-up" data-aos-duration="2000">Sizning malumotlaringizdan qonunbuzarlar o'z foydasiga foylanishadi!</Sec2_text> <br />
-        <Sec2_text data-aos="fade-up" data-aos-duration="2000">Agar siznig malumotlaringiz internetga qoyib yuborilishi bilan topsa qilishsa biz yoki militsiya hodimlari bilan aloqaga chiqing!</Sec2_text> <br />
-        <Sec2_text data-aos="fade-up" data-aos-duration="2000">Kim yozayotganini tekshiring! Hamma ham sizga do'st emas!</Sec2_text>
+        <Sec2_text data-aos="fade-up" data-aos-duration="2000"><h2>Ehtiyot boling!</h2></Sec2_text>
+        <Sec2_text data-aos="fade-up" data-aos-duration="2000"><h2>Internetda shaxsiy malumotlaringizni ishlatishni kamaytiring!</h2></Sec2_text> <br />
+        <Sec2_text data-aos="fade-up" data-aos-duration="2000"><h2>Sizning malumotlaringizdan qonunbuzarlar o'z foydasiga foylanishadi!</h2></Sec2_text> <br />
+        <Sec2_text data-aos="fade-up" data-aos-duration="2000"><h2>Agar siznig malumotlaringiz internetga qoyib yuborilishi bilan topsa qilishsa biz yoki militsiya hodimlari bilan aloqaga chiqing!</h2></Sec2_text> <br />
+        <Sec2_text data-aos="fade-up" data-aos-duration="2000"><h2>Kim yozayotganini tekshiring! Hamma ham sizga do'st emas!</h2></Sec2_text>
         
       </Section2>
 
       <Section3>
         <Sec2_text data-aos="fade-up" data-aos-duration="2000">
-          <h4>Web saytlarga malumot kiritishdan <br /> oldin uni rostligiga ahamiyat bering. <br /> Agar websayt https yozuviga ega bolmasa <br /> unga malumot kiritmang</h4>
+          <h2>Web saytlarga malumot kiritishdan <br /> oldin uni rostligiga ahamiyat bering. <br /> Agar websayt https yozuviga ega bolmasa <br /> unga malumot kiritmang</h2>
         </Sec2_text>
         <Fishing src={fish} alt="" data-aos="fade-up" data-aos-duration="2000"/>
          <Sec2_text data-aos="fade-up" data-aos-duration="2000">
-          <h4>Phishing - qalbaki sayt yordamida <br /> malumotlarni og'irlash</h4>
+          <h2>Phishing - qalbaki sayt yordamida <br /> malumotlarni og'irlash</h2>
         </Sec2_text>
       </Section3>
       <Section4>
