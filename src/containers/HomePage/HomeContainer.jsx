@@ -17,7 +17,7 @@ import { data } from "./components/responses";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #1d3557;
+  background-color: #373737;
   `;
 
 const Invisible = styled.div`

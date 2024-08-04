@@ -4,8 +4,15 @@ import { IoMdSettings } from "react-icons/io";
 import { MdNotificationsActive } from "react-icons/md";
 import { IoLogInSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
-import { ACCOUNT_PAGE, HOME_PAGE, LOGIN_PAGE, REPORT_PAGE } from "../../constants/routes";
+import {
+  ACCOUNT_PAGE,
+  HOME_PAGE,
+  LOGIN_PAGE,
+  REPORT_PAGE,
+} from "../../constants/routes";
 import { cookieData } from "../../utils/cookies";
+import Logoimg from "../../Images/la.png";
+import { WiDirectionRight } from "react-icons/wi";
 
 const Nav = styled.div`
   display: flex;
@@ -41,21 +48,25 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <Nav>
-      <Logo
-        onClick={() => navigate(HOME_PAGE)}
-      >
+      <Logo onClick={() => navigate(HOME_PAGE)}>
         Uzsafety
+        <img style={{ width: "2rem" }} src={Logoimg} alt="" />
       </Logo>
+
       <Nav_text>
         Yangiliklar
         <MdNotificationsActive size={24}></MdNotificationsActive>
       </Nav_text>
       <Nav_text>
-        <Link to={"/report"}>
-          Reklamaga shikoyat | personal yordam
-        </Link>
+        <Link to={"/report"}>Reklamaga shikoyat | personal yordam</Link>
       </Nav_text>
-      <Nav_text onClick={cookieData("username").getValue() === "" ? () => navigate(LOGIN_PAGE) : () => navigate(ACCOUNT_PAGE)}>
+      <Nav_text
+        onClick={
+          cookieData("username").getValue() === ""
+            ? () => navigate(LOGIN_PAGE)
+            : () => navigate(ACCOUNT_PAGE)
+        }
+      >
         Akkaunt
         <IoLogInSharp></IoLogInSharp>
       </Nav_text>
