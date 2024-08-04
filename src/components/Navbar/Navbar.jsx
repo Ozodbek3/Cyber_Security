@@ -11,7 +11,6 @@ import {
   REPORT_PAGE,
 } from "../../constants/routes";
 import { cookieData } from "../../utils/cookies";
-import Logoimg from "../../Images/la.png";
 import { WiDirectionRight } from "react-icons/wi";
 
 const Nav = styled.div`
@@ -50,7 +49,6 @@ const Navbar = () => {
     <Nav>
       <Logo onClick={() => navigate(HOME_PAGE)}>
         Uzsafety
-        <img style={{ width: "2rem" }} src={Logoimg} alt="" />
       </Logo>
 
       <Nav_text>
