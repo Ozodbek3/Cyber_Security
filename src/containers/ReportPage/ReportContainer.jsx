@@ -8,8 +8,9 @@ const Container = styled.div`
     width: 100%;
     margin-top: 8%;
     flex-direction: column;
+    background-color: #1d3557;
 `
-const Muammo = styled.div`
+const Muammo = styled.form`
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -22,7 +23,7 @@ const Title = styled.h2`
     color: white;
     cursor: default !important;
 `
-const Option = styled.button`
+const Option = styled.input`
     display: flex;
     padding: 1rem;
     height: 2rem;
@@ -48,30 +49,32 @@ const BtnCon = styled.div`
 const Yosh = styled.input`
     width: 20%;
 `
-const Button = styled.button`
+const Button = styled.input`
     padding: 1rem;
     font-size: medium;
     border-radius: 12px;
 `
 const ReportContainer = () => {
+    const [show , setShow] = useState(true)
     const navigate = useNavigate()
     return(
-        <Container>
-            <Muammo>
+        (show && <Container>
+            <Muammo onSubmit={(e) =>  e.preventDefault}>
                 <Title>Siz reklamadan norozimisiz? Balki qonun buzsarlarga nima deyish kerakligini bilmayapsizmi?</Title> <br />
                 <Title>Iltimos pastagi variantlardan birini tanlang</Title>
                 <BtnCon>
-                    <Option>Reklamaga shikoyat</Option>
-                    <Option>Meni aldashyatganini qanday aniqlayman</Option>
-                    <Option>Jinoyatchi bilan yordam</Option>
+                    <h3>Jinoyatchi bilan yordam</h3>
+                    <Option type="radio" name="option" required/>
+                    <h3 htmlFor="">Meni aldashyatganini qanday aniqlayman</h3>
+                    <Option type="radio" name="option" required/>
+                    <h3 htmlFor="">Reklamaga shikoyat</h3>
+                    <Option type="radio" name="option" required/>
                 </BtnCon>
                 <Title>Iltimos yoshingizni kiriting</Title>
-                <Yosh type="text" />
-                <Title>Reklamani videosini tashlang</Title>
-                <input type="file" />
-                <Button onClick={navigate("/report/chat")}>Muammoni yechish</Button>
+                <Yosh type="text" required/>
+                <Button type="submit" value="Muammoni yechish"/>
             </Muammo>
-        </Container>
+        </Container>)
     )
 }
 

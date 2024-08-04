@@ -13,6 +13,9 @@ import virus from "../../Images/virustotal.png"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { data } from "./components/responses";
+import { IoMdSend } from "react-icons/io";
+
+
 
 const Container = styled.div`
   display: flex;
@@ -58,7 +61,7 @@ const Minidiv = styled.div`
   display: flex;
   flex-direction: column;
   position: fixed;
-  background-color: blue;
+  background-color: grey;
   z-index: 900;
   transition: top 0.3s ease, left 0.3s ease, height 0.3s ease, width 0.3s ease,
     border-radius 0.3s ease;
@@ -82,20 +85,26 @@ const Buttons = styled.div`
   height: 20%;
   margin-left: 5%;
   background-color: white;
+  border-radius:7px;
 `;
 
 const Button = styled.div`
+  position: relative;
+  top : 3.4rem;
+  left : -7rem;
+  margin-left:8px;
   width: 25%;
-  height: 30%;
-  margin: 0 2%;
-  background-color: red;
+  height: 28%;
+  background-color: #7b7bc4;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: black;
   font-size: 1.2rem;
   text-align: center;
+  border: 1px solid grey;
+  border-radius: 8px;
 `;
 
 const TextCon = styled.div`
@@ -114,7 +123,6 @@ const Circle = styled.div`
   z-index: 1000;
   color: white;
   border-radius: 50%;
-  background-color: blue;
 `;
 
 const Sec1_text = styled.div`
@@ -169,6 +177,7 @@ const SafeUz = styled.div`
   align-items: center;
   height: 100vh;
   width: 100%;
+  background-image: url("https://www.ceo-review.com/wp-content/uploads/2020/11/cyber.jpg");
   
   `
 const Fishing = styled.img`
@@ -213,6 +222,34 @@ const Sec4_con = styled.div`
   gap: 1px;
   width: 47%;
   height: 80%;
+`
+const Input = styled.input`
+  position: absolute;
+  top: 35.8rem;
+  height:2rem;
+  width:83%;
+  border-radius:16px;
+  
+`
+const SendIcon = styled(IoMdSend)`
+  position: relative;
+  top: 6.5rem;
+  left: 4rem;
+  right: 2rem;
+  cursor: pointer;
+`
+const Sorovlar = styled.h3`
+  position: relative;
+  top:1rem ;
+  left:1rem ;
+  color:grey;
+`
+const Xuesos = styled.div`
+  position: absolute;
+  top: 24rem;
+  width: 120vw;
+  height: 50%;
+  background: linear-gradient( transparent, #5f5d5d);
 `
 const HomeContainer = () => {
 
@@ -282,6 +319,7 @@ const HomeContainer = () => {
     <Container>
       <Invisible onClick={invisible} />
       <SafeUz>
+        <Xuesos></Xuesos>
         <Logomiz></Logomiz>
       </SafeUz>
       <Section1>
@@ -361,11 +399,13 @@ const HomeContainer = () => {
           <Closed />
         ) : (
           <Buttons>
+            <Sorovlar>Tezkor sorovlar:</Sorovlar>
             {data.map((item, index) => (
               <Button key={index} onClick={() => handleClick(item.description)}>
                 {item.name}
               </Button>
             ))}
+        <Input type="text" placeholder="        sorov yozing" /><SendIcon color="blue" size="25"/>
           </Buttons>
         )}
       </Minidiv>
