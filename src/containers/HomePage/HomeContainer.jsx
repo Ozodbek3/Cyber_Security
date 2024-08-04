@@ -254,7 +254,7 @@ const HomeContainer = () => {
     if (!open) {
       setOpen(true);
       setHeight("90vh");
-      setWidth("30vw");
+      setWidth("35vw");
     } else {
       setOpen(false);
       setHeight("7vh");
@@ -275,7 +275,7 @@ const HomeContainer = () => {
 
   const calculateLeft = () => {
     if (!open) return "90%";
-    return `calc(91% - 30vw + 7vh)`;
+    return `calc(91% - 35vw + 7vh)`;
   };
 
   return (
