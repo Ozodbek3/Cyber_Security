@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { IoMdSettings } from "react-icons/io";
 import { MdNotificationsActive } from "react-icons/md";
 import { IoLogInSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
-import { ACCOUNT_PAGE, HOME_PAGE, LOGIN_PAGE } from "../../constants/routes";
+import { ACCOUNT_PAGE, HOME_PAGE, LOGIN_PAGE, REPORT_PAGE } from "../../constants/routes";
 import { cookieData } from "../../utils/cookies";
 
 const Nav = styled.div`
@@ -50,7 +51,9 @@ const Navbar = () => {
         <MdNotificationsActive size={24}></MdNotificationsActive>
       </Nav_text>
       <Nav_text>
-        Reklamaga shikoyat
+        <Link to={"/report"}>
+          Reklamaga shikoyat | personal yordam
+        </Link>
       </Nav_text>
       <Nav_text onClick={cookieData("username").getValue() === "" ? () => navigate(LOGIN_PAGE) : () => navigate(ACCOUNT_PAGE)}>
         Akkaunt
