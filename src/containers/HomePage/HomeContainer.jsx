@@ -2,14 +2,14 @@ import styled, { keyframes } from "styled-components";
 import { useState, useEffect } from "react";
 import { Search } from "react-feather";
 import { RxCross2 } from "react-icons/rx";
-import Double from "../../utils/world.png";
-import inkognit from "../../utils/detective.png"
-import fish from "../../utils/phishing.png"
-import https from "../../utils/https.png"
-import Uz from "../../utils/logo.png"
-import malware from "../../utils/malware.webp"
-import defender from "../../utils/metadefender.webp"
-import virus from "../../utils/virustotal.png"
+import Double from "../../Images/world.png";
+import inkognit from "../../Images/detective.png"
+import fish from "../../Images/phishing.png"
+import https from "../../Images/https.png"
+import Uz from "../../Images/logo.png"
+import malware from "../../Images/malware.webp"
+import defender from "../../Images/metadefender.webp"
+import virus from "../../Images/virustotal.png"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { data } from "./components/responses";
@@ -190,8 +190,8 @@ const Section4 = styled.div`
   height: 100vh;
 `
 const Logomiz = styled.div`
-  height: 40%;
-  width: 20%;
+  height: 70%;
+  width: 40%;
   background-size: cover;
   background-image: url(${Uz});
 `
